@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Video Chat</string>
+    <string name="login_failed">帐号或密码错误</string>
+    <string name="login_exception">无效输入</string>
+</resources>

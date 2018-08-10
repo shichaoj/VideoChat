@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    signingConfigs {
+        release {
+            keyAlias 'touchus'
+            keyPassword 'touchus789'
+            storeFile file("../touchus.keystore")
+            storePassword 'touchus789'
+        }
+    }
+    defaultConfig {
+        applicationId "com.backaudio.videochat"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+}
+
+dependencies {
+    implementation 'com.android.support:multidex:1.0.2'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':avchatkit')
+    implementation project(path: ':uikit')
+
+    api("com.android.support:appcompat-v7:${V7_APPCOMPAT_VERSION}")
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
