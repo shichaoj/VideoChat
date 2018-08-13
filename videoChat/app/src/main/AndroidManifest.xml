@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.backaudio.videochat">
 
+    <!-- 唤醒锁-->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <!-- 权限声明 -->
     <!-- 访问网络状态-->

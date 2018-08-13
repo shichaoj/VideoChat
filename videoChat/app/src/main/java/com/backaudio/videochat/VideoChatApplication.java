@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Environment;
 import android.text.TextUtils;
 
+import com.backaudio.videochat.login.LoginActivity;
 import com.netease.nim.avchatkit.AVChatKit;
 import com.netease.nim.avchatkit.config.AVChatOptions;
 import com.netease.nim.avchatkit.model.ITeamDataProvider;
@@ -59,8 +60,8 @@ public class VideoChatApplication extends Application {
 //                MainActivity.logout(context, true);
             }
         };
-//        avChatOptions.entranceActivity = WelcomeActivity.class;
-//        avChatOptions.notificationIconRes = R.drawable.ic_stat_notify_msg;
+        avChatOptions.entranceActivity = LoginActivity.class;
+        avChatOptions.notificationIconRes = R.drawable.ic_stat_notify_msg;
         AVChatKit.init(avChatOptions);
 
         // 初始化日志系统

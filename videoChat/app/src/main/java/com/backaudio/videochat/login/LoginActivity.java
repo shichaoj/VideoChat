@@ -27,46 +27,35 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private static final String TAG = LoginActivity.class.getSimpleName();
 
-    private AVChatCameraCapturer mVideoCapturer;
-    private AVChatData avChatData;
-
     //render
     private AVChatSurfaceViewRenderer smallRender;
     private AVChatSurfaceViewRenderer largeRender;
 
     private LinearLayout largeSizePreviewLayout;
     private Button btnLogin1, btnLogin2;
-    private Button btnCallVideo;
+    private Button btnCallVideo2, btnCallAudio2;
 
-
-    private CallStateEnum callingState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
+        initView();
 
 
     }
 
-    private void init() {
+    private void initView() {
         btnLogin1 = findViewById(R.id.login1);
         btnLogin2 = findViewById(R.id.login2);
 
-
-        btnCallVideo = findViewById(R.id.call_video2);
-
-//        View surfaceView = findViewById(R.id.avchat_surface_layout);
-//
-//        largeSizePreviewLayout = surfaceView.findViewById(R.id.large_size_preview);
-//
-//        this.smallRender = new AVChatSurfaceViewRenderer(this);
-//        this.largeRender = new AVChatSurfaceViewRenderer(this);
+        btnCallVideo2 = findViewById(R.id.call_video2);
+        btnCallAudio2 = findViewById(R.id.call_audio2);
 
         btnLogin2.setOnClickListener(this);
         btnLogin1.setOnClickListener(this);
-        btnCallVideo.setOnClickListener(this);
+        btnCallVideo2.setOnClickListener(this);
+        btnCallAudio2.setOnClickListener(this);
     }
 
     public void doLogin1() {
@@ -149,6 +138,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.call_video2:
                 startAudioVideoCall_1(AVChatType.VIDEO);
+                break;
+            case R.id.call_audio2:
+                startAudioVideoCall_1(AVChatType.AUDIO);
                 break;
             default:
                 break;
