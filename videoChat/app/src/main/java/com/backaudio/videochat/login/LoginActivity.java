@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private AVChatSurfaceViewRenderer largeRender;
 
     private LinearLayout largeSizePreviewLayout;
-    private Button btnLogin;
+    private Button btnLogin1, btnLogin2;
     private Button btnCallVideo;
 
 
@@ -51,7 +51,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void init() {
-        btnLogin = findViewById(R.id.login1);
+        btnLogin1 = findViewById(R.id.login1);
+        btnLogin2 = findViewById(R.id.login2);
+
+
         btnCallVideo = findViewById(R.id.call_video2);
 
 //        View surfaceView = findViewById(R.id.avchat_surface_layout);
@@ -61,7 +64,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //        this.smallRender = new AVChatSurfaceViewRenderer(this);
 //        this.largeRender = new AVChatSurfaceViewRenderer(this);
 
-        btnLogin.setOnClickListener(this);
+        btnLogin2.setOnClickListener(this);
+        btnLogin1.setOnClickListener(this);
         btnCallVideo.setOnClickListener(this);
     }
 
